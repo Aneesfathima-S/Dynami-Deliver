@@ -93,7 +93,7 @@ const DeliveryApp = () => {
   return (
     <div className="app-container">
       <header className="app-header">
-        <h1>🚀 DynamiDelivers</h1>
+        <h1>DynamiDelivers</h1>
         <p>AI-based Customized Time Slot Delivery</p>
       </header>
 
@@ -101,9 +101,9 @@ const DeliveryApp = () => {
         <h2>Suggest Delivery Time</h2>
         <select value={preferredTime} onChange={(e) => setPreferredTime(e.target.value)}>
           <option value="">Select preferred time</option>
-          <option value="morning">🌅 Morning</option>
-          <option value="afternoon">☀️ Afternoon</option>
-          <option value="evening">🌙 Evening</option>
+          <option value="morning">Morning</option>
+          <option value="afternoon">Afternoon</option>
+          <option value="evening">Evening</option>
         </select>
 
         <button onClick={suggestTime} disabled={isLoading || !preferredTime}>
