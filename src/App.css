@@ -1,38 +1,186 @@
-.App {
-  text-align: center;
+/* General Styles */
+@import 'react-datepicker/dist/react-datepicker.css';
+@import 'leaflet/dist/leaflet.css';
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f0f4f8;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-header {
+  background-color: #4CAF50;
   color: white;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h2 {
+  color: #4CAF50;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px; /* Unified padding */
+  font-size: 16px; /* Unified font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px; /* Unified margin */
+  display: inline-block;
+  text-align: center;
+  width: auto; /* Ensure width fits content */
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+select, input[type="text"], input[type="datetime-local"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 10px;
+}
+
+input[type="datetime-local"] {
+  margin-bottom: 20px;
+}
+
+.order-details, .reschedule, .confirmation {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-details p, .reschedule p, .confirmation p {
+  margin: 10px 0;
+  color: #555;
+}
+
+.confirmation {
+  background-color: #dff0d8;
+  border-color: #d0e9c6;
+}
+
+.confirmation h3 {
+  color: #3c763d;
+}
+
+.reschedule {
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.reschedule h3 {
+  color: #856404;
+}
+
+.order-details button {
+  background-color: #007bff;
+  margin-right: 10px;
+  padding: 10px 20px; /* Unified padding */
+  font-size: 16px; /* Unified font size */
+}
+
+.order-details button:hover {
+  background-color: #0056b3;
+}
+
+/* Real-Time Optimization Styles */
+.real-time-optimization {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.real-time-optimization h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.real-time-optimization ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.real-time-optimization li {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.route-info {
+  font-size: 16px;
+  color: #555;
+}
+
+.route-info h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #444;
+}
+
+.route-info p {
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .app-header {
+    padding: 15px;
+  }
+
+  button {
+    width: 100%; /* Ensure buttons fit the width on smaller screens */
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .order-details, .reschedule, .confirmation, .real-time-optimization {
+    width: 100%;
   }
 }
